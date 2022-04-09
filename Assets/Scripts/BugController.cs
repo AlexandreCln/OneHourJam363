@@ -6,16 +6,15 @@ namespace OneHourJam363
     {
         public float speed = 1f;
         private Rigidbody2D _rb;
-        private PlayerController _player;
 
         private void Start()
         {
-            _rb.velocity = new Vector2(x * 10f, _rb.velocity.y);
+            _rb = GetComponent<Rigidbody2D>();
         }
 
         private void Update()
         {
-            Vector2 playerPos = PlayerController.Instance.transform.position;
+            _rb.velocity = (PlayerController.Instance.transform.position - transform.position).normalized * 10f;
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
