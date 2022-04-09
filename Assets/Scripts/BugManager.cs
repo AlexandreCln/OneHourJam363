@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace OneHourJam363
@@ -15,6 +16,17 @@ namespace OneHourJam363
 
         void Start()
         {
+            Spawn();
+        }
+
+        public void WaitAndSpawn()
+        {
+            StartCoroutine(WaitWaitAndSpawn());
+        }
+
+        public IEnumerator WaitWaitAndSpawn()
+        {
+            yield return new WaitForSeconds(2f);
             Spawn();
         }
 
