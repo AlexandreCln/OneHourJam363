@@ -4,6 +4,13 @@ namespace OneHourJam363
 {
     public class FlowerSpawner : MonoBehaviour
     {
+        public static FlowerSpawner Instance;
+
+        private void Awake()
+        {
+            Instance = this;
+        }
+
         [SerializeField]
         private GameObject[] _flowers;
 
