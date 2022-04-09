@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8975081880146909722}
   - component: {fileID: 8975081880146909723}
   - component: {fileID: 8975081880146909724}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PinkFlower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
