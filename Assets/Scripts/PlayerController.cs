@@ -1,14 +1,20 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace OneHourJam363
 {
     public class PlayerController : MonoBehaviour
     {
+        public static PlayerController Instance { private set; get; }
+
         private Rigidbody2D _rb;
+        private SpriteRenderer _sr;
 
         private void Start()
         {
             _rb = GetComponent<Rigidbody2D>();
+            _sr = GetComponent<SpriteRenderer>();
+            Instance = this;
         }
 
         private void FixedUpdate()
@@ -25,8 +31,12 @@ namespace OneHourJam363
                 var hit = Physics2D.Raycast(transform.position, Vector2.down, float.PositiveInfinity, ~(1 << 6));
                 if (hit.distance > 0f && hit.distance < .6f)
                 {
-                    _rb.AddForce(Vector2.up * 5f, ForceMode2D.Impulse);
+                    _rb.AddForce(Vector2.up * 8f, ForceMode2D.Impulse);
                 }
+            }
+            if (transform.position.y < -5f)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }
