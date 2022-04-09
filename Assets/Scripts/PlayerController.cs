@@ -9,11 +9,13 @@ namespace OneHourJam363
 
         private Rigidbody2D _rb;
         private SpriteRenderer _sr;
+        private AudioSource _as;
 
         private void Start()
         {
             _rb = GetComponent<Rigidbody2D>();
             _sr = GetComponent<SpriteRenderer>();
+            _as = GetComponent<AudioSource>();
             Instance = this;
         }
 
@@ -39,6 +41,7 @@ namespace OneHourJam363
                 if (hit.distance > 0f && hit.distance < .6f)
                 {
                     _rb.AddForce(Vector2.up * 8f, ForceMode2D.Impulse);
+                    _as.Play();
                 }
             }
             if (transform.position.y < -5f)
