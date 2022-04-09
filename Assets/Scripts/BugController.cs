@@ -10,5 +10,12 @@ namespace OneHourJam363
         {
             
         }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            FlowerSpawner.Instance.SpawnFlower(collision.contacts[0].point);
+            BugManager.instance.Spawn();
+            Destroy(gameObject);
+        }
     }
 }

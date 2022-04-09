@@ -15,6 +15,11 @@ namespace OneHourJam363
 
         void Start()
         {
+            Spawn();
+        }
+
+        public void Spawn()
+        {
             Instantiate(_bug, new Vector2(PlayerController.Instance.transform.position.x, 10f), Quaternion.identity);
         }
     }   
