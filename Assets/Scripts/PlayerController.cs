@@ -11,12 +11,16 @@ namespace OneHourJam363
         private SpriteRenderer _sr;
         private AudioSource _as;
 
+        private void Awake()
+        {
+            Instance = this;
+        }
+
         private void Start()
         {
             _rb = GetComponent<Rigidbody2D>();
             _sr = GetComponent<SpriteRenderer>();
             _as = GetComponent<AudioSource>();
-            Instance = this;
         }
 
         private void FixedUpdate()

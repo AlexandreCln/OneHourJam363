@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace OneHourJam363
@@ -12,14 +10,12 @@ namespace OneHourJam363
 
     void Start()
     {
-        _player = PlayerController.Instance;
-        
         Instantiate(_bug);
     }
 
     void Update()
     {
-        Vector2 playerPos = _player.transform.position;
+        Vector2 playerPos = PlayerController.Instance.transform.position;
         Debug.Log(playerPos);
     }
 }   
