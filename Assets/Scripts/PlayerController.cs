@@ -48,7 +48,7 @@ namespace OneHourJam363
                     _as.Play();
                 }
             }
-            if (transform.position.y < -5f)
+            if (transform.position.y < -5f || Stats.Instance.count == 0)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
