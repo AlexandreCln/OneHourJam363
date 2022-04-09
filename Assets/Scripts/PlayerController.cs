@@ -39,5 +39,13 @@ namespace OneHourJam363
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Finish"))
+            {
+                SceneManager.LoadScene("Victory");
+            }
+        }
     }
 }
