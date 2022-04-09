@@ -21,7 +21,14 @@ namespace OneHourJam363
         {
             var x = Input.GetAxis("Horizontal");
             _rb.velocity = new Vector2(x * 10f, _rb.velocity.y);
-
+            if (_rb.velocity.x > 0f)
+            {
+                _sr.flipX = false;
+            }
+            else if (_rb.velocity.x < 0f)
+            {
+                _sr.flipX = true;
+            }
         }
 
         private void Update()
